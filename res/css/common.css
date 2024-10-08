@@ -1,0 +1,83 @@
+/* Navigatsiooniriba */
+nav {
+    background-color: #333;
+    padding: 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+/* Vasak külg navigatsiooniriba */
+.nav-left {
+    display: flex;
+    align-items: center;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    padding: 10px;
+}
+
+.nav-link:hover {
+    background-color: #555;
+}
+
+/* Parem külg navigatsiooniriba */
+.user-icon-link {
+    margin-right: 50px; 
+}
+
+.user-icon-link img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+body {
+    padding-top: 70px;
+    margin: 0;
+    font-family: "Varela Round", Arial, "Helvetica Neue", Helvetica, serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    width: 100%; /* Täispikkuses footer */
+}
+
+/* Flexbox */
+@media (max-width: 600px) {
+    .user-icon-link img {
+        width: 30px;
+        height: 30px;
+    }
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-link {
+        margin-bottom: 10px;
+    }
+
+    .user-icon-link {
+        margin-right: 0; /* Eemalda margin väiksemate ekraanide puhul */
+    }
+}

@@ -1,22 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="res/css/index.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Home - Posts</title>
+    <link rel="stylesheet" href="res\css\common.css">
+    <link rel="stylesheet" href="res\css\index.css">
+
 </head>
 <body>
-    
-        <header class="header">
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">addPost</a></li>
-                
-    
-        </ul>
-        <img src="res/images/profile.png" width="50" height="50" alt="My picture">
-        </header>
-    
+    <nav>
+        <div class="nav-left">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="addPost.html" class="nav-link">Add Post</a>
+        </div>
+        <a href="login.html" class="user-icon-link">
+            <img src="res\images\user-avatar.png" alt="User Profile">
+        </a>
+    </nav>
+
+    <section id="posts">
+        <h1>Recent Posts</h1>
+
+        <!-- Postitus pildiga -->
+        <div class="post">
+            <div class="post-header">
+                <img class="avatar" src="res\images\user-avatar.png" alt="User Avatar">
+                <span class="post-info">Oct 22, 2024</span>
+            </div>
+            <div class="post-content">
+                <img src="res\images\tartu.jpeg" alt="Tartu 2022">
+                <p>Tartu 2022</p>
+            </div>
+            <div class="post-footer">
+                <button class="like-button">👍 Like</button>
+                <span class="like-count">12 Likes</span>
+            </div>
+        </div>
+        
+        <!-- Postitused ilma pildita -->
+        <div class="post">
+            <div class="post-header">
+                <img class="avatar" src="res\images\user-avatar.png" alt="User Avatar">
+                <span class="post-info">Oct 2, 2024</span>
+            </div>
+            <div class="post-content">
+                <p>Anyone knows in which room is the lab today?</p>
+            </div>
+            <div class="post-footer">
+                <button class="like-button">👍 Like</button>
+                <span class="like-count">8 Likes</span>
+            </div>
+        </div>
+        
+        <div class="post">
+            <div class="post-header">
+                <img class="avatar" src="res\images\user-avatar.png" alt="User Avatar">
+                <span class="post-info">Oct 1, 2024</span>
+            </div>
+            <div class="post-content">
+                <p>Looking forward to the next hackathon!</p>
+            </div>
+            <div class="post-footer">
+                <button class="like-button">👍 Like</button>
+                <span class="like-count">16 Likes</span>
+            </div>
+        </div>
+        
+        <div class="post">
+            <div class="post-header">
+                <img class="avatar" src="res\images\user-avatar.png" alt="User Avatar">
+                <span class="post-info">Sept 30, 2024</span>
+            </div>
+            <div class="post-content">
+                <p>Just completed my first project on GitHub Pages!</p>
+            </div>
+            <div class="post-footer">
+                <button class="like-button">👍 Like</button>
+                <span class="like-count">20 Likes</span>
+            </div>
+        </div>
+        
+        <div class="post">
+            <div class="post-header">
+                <img class="avatar" src="res\images\user-avatar.png" alt="User Avatar">
+                <span class="post-info">Sept 25, 2024</span>
+            </div>
+            <div class="post-content">
+                <p>Exploring web development frameworks.</p>
+            </div>
+            <div class="post-footer">
+                <button class="like-button">👍 Like</button>
+                <span class="like-count">1 Likes</span>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>2024</p>
+    </footer>
 </body>
 </html>
