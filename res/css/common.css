@@ -63,13 +63,13 @@ footer {
 }
 
 /* Flexbox */
-@media (max-width: 600px) {
+@media (max-width: 0px) {
     .user-icon-link img {
         width: 30px;
         height: 30px;
     }
     nav {
-        flex-direction: column;
+        flex-direction: row;
         align-items: flex-start;
     }
 
