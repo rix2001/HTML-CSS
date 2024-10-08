@@ -35,7 +35,6 @@
 }
 
 .add-post-box button {
-  background-color: #007BFF;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -43,6 +42,10 @@
   cursor: pointer;
 }
 
+form button {
+  background-color: rgb(173, 173, 0);
+}
+
 .add-post-box button:hover {
-  background-color: #0056b3;
+  background-color: #b39500;
 }
