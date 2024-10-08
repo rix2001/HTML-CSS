@@ -22,16 +22,36 @@
   border-radius: 50%;
 }
 
+
+.post-info:hover {
+  color: #000; 
+}
+
 .post-info {
   color: #555;
   font-size: 0.9em;
 }
 
-/* Postituse sisu */
+
 .post-content img {
   max-width: 100%;
   border-radius: 10px;
   margin: 10px 0;
+}
+
+.post > p {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+img + p {
+  font-size: 1.1em;
+  color: #444;
+}
+
+/* Teskstid peale pilti */
+img ~ p {
+  font-style: italic;
 }
 
 /* Postituse jalus */
@@ -39,6 +59,12 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
+}
+
+/* Pseudo-class like nupp */
+.like-button:hover {
+  background-color: #0056b3;
+  transform: scale(1.1); /* Suurenda nuppu natuke */
 }
 
 .like-button {
@@ -49,10 +75,6 @@
   padding: 5px 10px;
   border-radius: 5px;
   cursor: pointer;
-}
-
-.like-button:hover {
-  background-color: #0056b3;
 }
 
 .like-count {
