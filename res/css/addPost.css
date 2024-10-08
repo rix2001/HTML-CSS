@@ -1,46 +1,48 @@
-* {
-    font-family: sans-serif;
-    box-sizing: border-box;
-  }
-
-  body{
-    margin: 0px;
-  }
-
-  .logo{
-    margin: 0;
-  }
-
-  ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
+/* Add Post lehekülg */
+#add-post-section {
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  height: 100vh; 
+  width: 70%;
+  padding: 20px; /
 }
 
-li{
-    float: left;
+.add-post-box {
+  background-color: #f4f4f4;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  width: 100%;
+  max-width: 80%;
 }
 
-li a{
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
+.add-post-box h1 {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+  text-align: left;
 }
 
-li a:hover:not(.active) {
-    background-color: #111;
+.add-post-box form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
-
-.header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    background-color: #333;
+.add-post-box textarea, .add-post-box input[type="file"] {
+  width: 100%;
+  margin-bottom: 15px;
 }
 
+.add-post-box button {
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
 
+.add-post-box button:hover {
+  background-color: #0056b3;
+}

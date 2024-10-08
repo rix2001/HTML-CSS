@@ -1,17 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="res/css/addPost.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Add Post</title>
+    <link rel="stylesheet" href="res\css\common.css">
+    <link rel="stylesheet" href="res\css\addPost.css">
+
 </head>
 <body>
-    <header class="header">
-        <ul>
-            <li><a href="#">Home</a></li>
-            </ul>
-    <img src="res/images/profile.png" width="50" height="50" alt="My picture">
-    </header>
+    <nav>
+        <div class="nav-left">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="addPost.html" class="nav-link">Add Post</a>
+        </div>
+        <a href="login.html" class="user-icon-link">
+            <img src="res\images\user-avatar.png" alt="User Profile">
+        </a>
+    </nav>
+
+    <section id="add-post-section">
+        <div class="add-post-box">
+            <h1>Add a New Post</h1>
+            <form action="index.html" method="post">
+                <label for="content">Post body</label>
+                <textarea id="content" name="content" required></textarea>
+                <br>
+                <label for="file">Select file</label>
+                <input type="file" id="file" name="file">
+                <br>
+                <button type="submit">Create post</button>
+            </form>
+        </div>
+    </section>
 </body>
 </html>

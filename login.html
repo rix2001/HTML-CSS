@@ -1,17 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="res/css/login.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Login</title>
+    <link rel="stylesheet" href="res\css\common.css">
+    <link rel="stylesheet" href="res\css\login.css">
 </head>
 <body>
-    <header class="header">
-        <ul>
-            <li><a href="#">Home</a></li>
-            </ul>
-    <img src="res/images/profile.png" width="50" height="50" alt="My picture">
-    </header>
+    <nav>
+        <div class="nav-center">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="addPost.html" class="nav-link">Add Post</a>
+        </div>
+        <a href="login.html" class="user-icon-link">
+            <img src="res\images\user-avatar.png" alt="User Profile">
+        </a>
+    </nav>
+
+    <section id="login-section">
+        <div class="login-box">
+            <h1>Welcome to PostIt</h1>
+            <form action="index.html" method="get">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <br>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <br>
+                <button type="submit">Log in</button>
+            </form>
+
+            <p><a href="#">Create an account</a></p>
+            <p><a href="#">Forgot password</a></p>
+        </div>
+    </section>
 </body>
 </html>
