@@ -1,3 +1,3 @@
 # HTML-CSS
-Homework 1, HTML + CSS webpages.
+Homework 2, Javascript webpages.
 https://rix2001.github.io/HTML-CSS/index.html
