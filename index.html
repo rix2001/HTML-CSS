@@ -99,5 +99,69 @@
     <footer>
         <p>2024</p>
     </footer>
+     <script>
+        // Fetch posts from local JSON file and add them to the posts section
+        fetch('json/posts.json')
+            .then(response => response.json())
+            .then(posts => {
+                const postsSection = document.getElementById('posts');
+
+                posts.forEach(post => {
+                    // Create the container div for each post
+                    const postDiv = document.createElement('div');
+                    postDiv.className = 'post';
+
+                    // Create post header with avatar and date
+                    const postHeader = document.createElement('div');
+                    postHeader.className = 'post-header';
+                    const avatar = document.createElement('img');
+                    avatar.className = 'avatar';
+                    avatar.src = 'res/images/user-avatar.png';
+                    avatar.alt = 'User Avatar';
+                    const postInfo = document.createElement('span');
+                    postInfo.className = 'post-info';
+                    postInfo.textContent = new Date(post.createdAt).toLocaleDateString();
+
+                    // Append avatar and date to header
+                    postHeader.appendChild(avatar);
+                    postHeader.appendChild(postInfo);
+
+                    // Create post content with title and content
+                    const postContent = document.createElement('div');
+                    postContent.className = 'post-content';
+                    const title = document.createElement('h3');
+                    title.textContent = post.title;
+                    const content = document.createElement('p');
+                    content.textContent = post.content;
+
+                    // Append title and content to post content div
+                    postContent.appendChild(title);
+                    postContent.appendChild(content);
+
+                    // Create post footer with like button
+                    const postFooter = document.createElement('div');
+                    postFooter.className = 'post-footer';
+                    const likeButton = document.createElement('button');
+                    likeButton.className = 'like-button';
+                    likeButton.textContent = '👍 Like';
+                    const likeCount = document.createElement('span');
+                    likeCount.className = 'like-count';
+                    likeCount.textContent = `${post.likes || 0} Likes`;
+
+                    // Append like button and like count to footer
+                    postFooter.appendChild(likeButton);
+                    postFooter.appendChild(likeCount);
+
+                    // Append header, content, and footer to main post div
+                    postDiv.appendChild(postHeader);
+                    postDiv.appendChild(postContent);
+                    postDiv.appendChild(postFooter);
+
+                    // Append post div to posts section
+                    postsSection.appendChild(postDiv);
+                });
+            })
+            .catch(error => console.error('Error fetching posts:', error));
+    </script> 
 </body>
 </html>

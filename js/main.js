@@ -1,5 +1,5 @@
 // Fetch the JSON data from the file located in the data folder
-fetch('data/posts.json')
+/*fetch('json/posts.json')
     .then(response => response.json())  // Convert response to JSON
     .then(data => {
         console.log(data);  // Log data or use it in your application
@@ -20,4 +20,4 @@ fetch('data/posts.json')
             document.body.appendChild(postContainer);  // Append to body or another element
         });
     })
-    .catch(error => console.error('Error fetching JSON data:', error));
+    .catch(error => console.error('Error fetching JSON data:', error)); */

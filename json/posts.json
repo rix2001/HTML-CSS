@@ -2,17 +2,17 @@
     {
         "postId": 1,
         "title": "Understanding JSON Basics",
-        "content": "JSON is a lightweight data-interchange format...",
+        "content": "Tartu 2022",
         "author": "Alice Johnson",
-        "createdAt": "2023-10-02T08:30:00",
+        "createdAt": "2024-10-22T08:30:00",
         "tags": ["JSON", "Data Formats", "Programming"]
     },
     {
         "postId": 2,
         "title": "Top JavaScript Frameworks in 2023",
-        "content": "JavaScript frameworks simplify development by providing...",
+        "content": "Anyone knows in which room is the lab today?",
         "author": "Bob Smith",
-        "createdAt": "2023-09-28T14:45:00",
+        "createdAt": "2024-10-02T14:45:00",
         "tags": ["JavaScript", "Frameworks", "Web Development"]
     },
     {
