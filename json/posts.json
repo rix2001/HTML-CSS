@@ -1,0 +1,42 @@
+[
+    {
+        "postId": 1,
+        "title": "Understanding JSON Basics",
+        "content": "JSON is a lightweight data-interchange format...",
+        "author": "Alice Johnson",
+        "createdAt": "2023-10-02T08:30:00",
+        "tags": ["JSON", "Data Formats", "Programming"]
+    },
+    {
+        "postId": 2,
+        "title": "Top JavaScript Frameworks in 2023",
+        "content": "JavaScript frameworks simplify development by providing...",
+        "author": "Bob Smith",
+        "createdAt": "2023-09-28T14:45:00",
+        "tags": ["JavaScript", "Frameworks", "Web Development"]
+    },
+    {
+        "postId": 3,
+        "title": "The Future of Artificial Intelligence",
+        "content": "AI is rapidly advancing with applications across multiple sectors...",
+        "author": "Carol Lee",
+        "createdAt": "2023-10-01T10:15:00",
+        "tags": ["AI", "Machine Learning", "Future Tech"]
+    },
+    {
+        "postId": 4,
+        "title": "Tips for Effective Remote Work",
+        "content": "Working remotely has become a new norm for many professionals...",
+        "author": "David Kim",
+        "createdAt": "2023-09-30T09:30:00",
+        "tags": ["Remote Work", "Productivity", "Work Life"]
+    },
+    {
+        "postId": 5,
+        "title": "Exploring Python for Data Science",
+        "content": "Python is the go-to language for data science due to its simplicity...",
+        "author": "Eva Martin",
+        "createdAt": "2023-10-03T15:00:00",
+        "tags": ["Python", "Data Science", "Programming"]
+    }
+]
