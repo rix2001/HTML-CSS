@@ -1,3 +1,20 @@
+// Toggle dropdown visibility
+function toggleDropdown(event) {
+    event.preventDefault(); // Prevent the link from redirecting
+    const dropdown = document.getElementById('user-dropdown');
+    dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+}
+
+// Close the dropdown if clicked outside of it
+window.onclick = function(event) {
+    if (!event.target.matches('.user-icon-link img')) {
+        const dropdown = document.getElementById('user-dropdown');
+        if (dropdown && dropdown.style.display === 'block') {
+            dropdown.style.display = 'none';
+        }
+    }
+}
+
 // Fetch the JSON data from the file located in the data folder
 /*fetch('json/posts.json')
     .then(response => response.json())  // Convert response to JSON

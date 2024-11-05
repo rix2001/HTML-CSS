@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - Posts</title>
-    <link rel="stylesheet" href="res\css\common.css">
-    <link rel="stylesheet" href="res\css\index.css">
+    <link rel="stylesheet" href="res/css/common.css">
+    <link rel="stylesheet" href="res/css/index.css">
+
+
 
 </head>
 <body>
@@ -14,9 +16,14 @@
             <a href="index.html" class="nav-link">Home</a>
             <a href="addPost.html" class="nav-link">Add Post</a>
         </div>
-        <a href="login.html" class="user-icon-link">
-            <img src="res\images\user-avatar.png" alt="User Profile">
+        <a href="#" class="user-icon-link" onclick="toggleDropdown(event)">
+            <img src="res/images/user-avatar.png" alt="User Profile">
         </a>
+        <div id="user-dropdown" class="dropdown-content">
+            <p>Joe Pine</p>
+            <p>joe.pine@ut.ee</p>
+            <a href="login.html">Logout</a>
+        </div>
     </nav>
 
     <section id="posts">
@@ -27,6 +34,7 @@
     <footer>
         <p>2024</p>
     </footer>
+    <script src="js/main.js"></script>
 
     <!-- <script>                        EI TOHI ÄRA KUSTUTADA!!!!!!!!!!!!
         // Fetch posts from JSONBin endpoint
