@@ -38,62 +38,7 @@
             </div>
         </div>
         
-        <!-- Postitused ilma pildita -->
-        <div class="post">
-            <div class="post-header">
-                <img class="avatar" src="res\images\user-avatar.png" alt="User Avatar">
-                <span class="post-info">Oct 2, 2024</span>
-            </div>
-            <div class="post-content">
-                <p>Anyone knows in which room is the lab today?</p>
-            </div>
-            <div class="post-footer">
-                <button class="like-button">👍 Like</button>
-                <span class="like-count">8 Likes</span>
-            </div>
-        </div>
-        
-        <div class="post">
-            <div class="post-header">
-                <img class="avatar" src="res\images\user-avatar.png" alt="User Avatar">
-                <span class="post-info">Oct 1, 2024</span>
-            </div>
-            <div class="post-content">
-                <p>Looking forward to the next hackathon!</p>
-            </div>
-            <div class="post-footer">
-                <button class="like-button">👍 Like</button>
-                <span class="like-count">16 Likes</span>
-            </div>
-        </div>
-        
-        <div class="post">
-            <div class="post-header">
-                <img class="avatar" src="res\images\user-avatar.png" alt="User Avatar">
-                <span class="post-info">Sept 30, 2024</span>
-            </div>
-            <div class="post-content">
-                <p>Just completed my first project on GitHub Pages!</p>
-            </div>
-            <div class="post-footer">
-                <button class="like-button">👍 Like</button>
-                <span class="like-count">20 Likes</span>
-            </div>
-        </div>
-        
-        <div class="post">
-            <div class="post-header">
-                <img class="avatar" src="res\images\user-avatar.png" alt="User Avatar">
-                <span class="post-info">Sept 25, 2024</span>
-            </div>
-            <div class="post-content">
-                <p>Exploring web development frameworks.</p>
-            </div>
-            <div class="post-footer">
-                <button class="like-button">👍 Like</button>
-                <span class="like-count">1 Likes</span>
-            </div>
-        </div>
+       
     </section>
 
     <footer>
@@ -148,14 +93,21 @@
                     likeCount.className = 'like-count';
                     likeCount.textContent = `${post.likes || 0} Likes`;
 
+                    // Image
+                    const img = document.createElement('img');
+                    img.src = post.imageBase64;
+                    img.alt = post.title;
+                    img.className = 'post-image';
+
                     // Append like button and like count to footer
                     postFooter.appendChild(likeButton);
                     postFooter.appendChild(likeCount);
 
-                    // Append header, content, and footer to main post div
+                    // Append header, content, and footer and image to main post div
                     postDiv.appendChild(postHeader);
                     postDiv.appendChild(postContent);
                     postDiv.appendChild(postFooter);
+                    postDiv.appendChild(img);
 
                     // Append post div to posts section
                     postsSection.appendChild(postDiv);
