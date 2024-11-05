@@ -38,13 +38,91 @@
             </div>
         </div>
         
-       
     </section>
 
     <footer>
         <p>2024</p>
     </footer>
-     <script>
+
+    <script>
+        // Fetch posts from JSONBin endpoint
+        fetch('https://api.jsonbin.io/v3/b/672a434fad19ca34f8c4b034', {
+            headers: {
+                'X-Master-Key': '$2a$10$1OrbyMzlhUYANBHICc7QUeeb2fNXu1rZgsgyZzCgu9NgJErqfpmpG'
+            }
+        })
+            .then(response => response.json())
+            .then(data => {
+                const posts = data.record; // Access the array of posts
+                const postsSection = document.getElementById('posts');
+
+                posts.forEach(post => {
+                    // Create the container div for each post
+                    const postDiv = document.createElement('div');
+                    postDiv.className = 'post';
+
+                    // Create post header with avatar and date
+                    const postHeader = document.createElement('div');
+                    postHeader.className = 'post-header';
+                    const avatar = document.createElement('img');
+                    avatar.className = 'avatar';
+                    avatar.src = 'res/images/user-avatar.png';
+                    avatar.alt = 'User Avatar';
+                    const postInfo = document.createElement('span');
+                    postInfo.className = 'post-info';
+                    postInfo.textContent = new Date(post.createdAt).toLocaleDateString();
+
+                    // Append avatar and date to header
+                    postHeader.appendChild(avatar);
+                    postHeader.appendChild(postInfo);
+
+                    // Create post content with title and content
+                    const postContent = document.createElement('div');
+                    postContent.className = 'post-content';
+                    const title = document.createElement('h3');
+                    title.textContent = post.title;
+                    const content = document.createElement('p');
+                    content.textContent = post.content;
+
+                    // Check if there is a Base64 image in the post data
+                    if (post.imageBase64) {
+                        const img = document.createElement('img');
+                        img.src = post.imageBase64; // Use Base64 string as src
+                        img.alt = post.title;
+                        img.className = 'post-image';
+                        postContent.appendChild(img); // Append image to the post content
+                    }
+
+                    // Append title and content to post content div
+                    postContent.appendChild(title);
+                    postContent.appendChild(content);
+
+                    // Create post footer with like button
+                    const postFooter = document.createElement('div');
+                    postFooter.className = 'post-footer';
+                    const likeButton = document.createElement('button');
+                    likeButton.className = 'like-button';
+                    likeButton.textContent = '👍 Like';
+                    const likeCount = document.createElement('span');
+                    likeCount.className = 'like-count';
+                    likeCount.textContent = `${post.likes || 0} Likes`;
+
+                    // Append like button and like count to footer
+                    postFooter.appendChild(likeButton);
+                    postFooter.appendChild(likeCount);
+
+                    // Append header, content, and footer to main post div
+                    postDiv.appendChild(postHeader);
+                    postDiv.appendChild(postContent);
+                    postDiv.appendChild(postFooter);
+
+                    // Append post div to posts section
+                    postsSection.appendChild(postDiv);
+                });
+            })
+            .catch(error => console.error('Error fetching posts:', error));
+    </script>
+     <!-- <script>
         // Fetch posts from local JSON file and add them to the posts section
         fetch('json/posts.json')
             .then(response => response.json())
@@ -104,8 +182,6 @@
                     likeCount.className = 'like-count';
                     likeCount.textContent = `${post.likes || 0} Likes`;
 
-                    
-
                     // Append like button and like count to footer
                     postFooter.appendChild(likeButton);
                     postFooter.appendChild(likeCount);
@@ -122,6 +198,6 @@
                 });
             })
             .catch(error => console.error('Error fetching posts:', error));
-    </script> 
+    </script> -->
 </body>
 </html>

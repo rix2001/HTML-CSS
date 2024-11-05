@@ -21,6 +21,7 @@
         });
     })
     .catch(error => console.error('Error fetching JSON data:', error)); */
+    
     fetch('https://api.jsonbin.io/v3/b/672a434fad19ca34f8c4b034')
         .then(response => response.json())
         .then(data => console.log(data));
