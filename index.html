@@ -79,9 +79,20 @@
                     const content = document.createElement('p');
                     content.textContent = post.content;
 
+                    // Check if there is a Base64 image in the post data
+                    if (post.imageBase64) {
+                        const img = document.createElement('img');
+                        img.src = post.imageBase64; // Use Base64 string as src
+                        img.alt = post.title;
+                        img.className = 'post-image';
+                        postContent.appendChild(img); // Append image to the post content
+                    }
+
                     // Append title and content to post content div
                     postContent.appendChild(title);
+                   // postContent.appendChild(img);
                     postContent.appendChild(content);
+                    //postContent.appendChild(img);
 
                     // Create post footer with like button
                     const postFooter = document.createElement('div');
@@ -93,17 +104,14 @@
                     likeCount.className = 'like-count';
                     likeCount.textContent = `${post.likes || 0} Likes`;
 
-                    // Image
-                    const img = document.createElement('img');
-                    img.src = post.imageBase64;
-                    img.alt = post.title;
-                    img.className = 'post-image';
+                    
 
                     // Append like button and like count to footer
                     postFooter.appendChild(likeButton);
                     postFooter.appendChild(likeCount);
 
                     // Append header, content, and footer and image to main post div
+                    //postDiv.appendChild(img);
                     postDiv.appendChild(postHeader);
                     postDiv.appendChild(postContent);
                     postDiv.appendChild(postFooter);
