@@ -32,6 +32,7 @@
   };
   </script>
 
-<style src="/res/css/common.css"></style>
-<style src="/res/css/index.css"></style>
-  
+<style>
+@import "/res/css/common.css";
+@import "/res/css/index.css";
+</style>

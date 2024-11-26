@@ -33,5 +33,7 @@ export default {
 };
 </script>
 
-<style src="/res/css/common.css"></style>
-<style src="/res/css/login.css"></style>
+<style>
+@import "/res/css/common.css";
+@import "/res/css/login.css";
+</style>

@@ -31,5 +31,7 @@ export default {
 };
 </script>
 
-<style src="/res/css/common.css"></style>
-<style src="/res/css/addPost.css"></style>
+<style>
+@import "/res/css/common.css";
+@import "/res/css/addPost.css";
+</style>
