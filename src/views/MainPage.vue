@@ -31,4 +31,7 @@
     },
   };
   </script>
+
+<style src="/res/css/common.css"></style>
+<style src="/res/css/index.css"></style>
   
