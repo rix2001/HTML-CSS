@@ -11,12 +11,12 @@
   </script>
   
   <style scoped>
-  footer {
-    background: #ddd;
-    position: sticky;
-    bottom: 0;
-    text-align: center;
-    padding: 1em;
-  }
+footer {
+  background: #2c3e50;
+  color: white;
+  text-align: center;
+  padding: 1em 0;
+  font-size: 0.9em;
+}
   </style>
   

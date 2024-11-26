@@ -14,13 +14,22 @@
   </script>
   
   <style scoped>
-  header {
-    background: #ddd;
-    padding: 1em;
-  }
-  nav a {
-    margin-right: 1em;
-    text-decoration: none;
-  }
+header {
+  background: #ec45a1;
+  color: white;
+  padding: 1em;
+}
+
+nav a {
+  color: white;
+  margin-right: 1em;
+  font-size: 1.1em;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #d5f5e3;
+}
   </style>
   

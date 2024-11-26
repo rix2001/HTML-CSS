@@ -2,7 +2,7 @@
     <div>
       <h3>{{ post.title }}</h3>
       <p>{{ post.content }}</p>
-      <button @click="likePost">Like ({{ post.likes }})</button>
+      <button @click="likePost">Like 👍 ({{ post.likes }})</button>
     </div>
   </template>
   
