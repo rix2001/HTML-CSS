@@ -1,3 +1,3 @@
 # HTML-CSS
-Homework 2, Javascript webpages.
+Homework 3, Vue + Vuex webpages.
 https://rix2001.github.io/HTML-CSS/
