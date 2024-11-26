@@ -13,6 +13,8 @@
   <style scoped>
   footer {
     background: #ddd;
+    position: sticky;
+    bottom: 0;
     text-align: center;
     padding: 1em;
   }
