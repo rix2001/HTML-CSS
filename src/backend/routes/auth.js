@@ -29,7 +29,7 @@ router.post("/signup", async (req, res) => {
     });
     res.status(201).json({ message: "User created successfully!", token });
   } catch (err) {
-    console.error("Database Error:", err.message); // Logi täpne viga
+    console.error("Database Error:", err.message); // Log exact error
     if (err.code === "23505") {
       return res.status(400).json({ error: "User already exists." }); // PostgreSQL duplicate error
     }

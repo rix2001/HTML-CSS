@@ -1,27 +1,25 @@
 <template>
-    <div>
-      <Header />
-      <main class="content">
-        <form @submit.prevent="validatePassword">
-          <label>
-            Username:
-            <input type="text" v-model="username" required />
-          </label>
-          <label>
-            Password:
-            <input type="password" v-model="password" required />
-          </label>
-          <button type="submit">Sign Up</button>
-          <p v-if="error">{{ error }}</p>
-        </form>
-      </main>
-      <Footer />
-    </div>
-  </template>
+  <div class="signup-container">
+    <main class="main-content">
+      <h2>Sign Up</h2>
+      <form @submit.prevent="validatePassword" class="signup-form">
+        <div class="form-group">
+          <input type="text" placeholder="Username" v-model="username" required />
+        </div>
+        <div class="form-group">
+          <input type="password" placeholder="Password" v-model="password" required />
+        </div>
+        <button type="submit" class="button">Sign Up</button>
+        <p v-if="error" class="error-message">{{ error }}</p>
+      </form>
+    </main>
+  </div>
+</template>
   
   <script>
-import Footer from "@/components/Footer.vue";
-import Header from "@/components/Header.vue";
+  import Footer from "@/components/Footer.vue";
+  import Header from "@/components/Header.vue";
+
   export default {
     name: "SignupPage",
     components: { Header, Footer},
@@ -47,9 +45,10 @@ import Header from "@/components/Header.vue";
         if (!/\d/.test(this.password)) {
           conditions.push("Must include at least one numeric value.");
         }
-        if (!/^_/.test(this.password)) {
+        if (!/_/.test(this.password)) {
           conditions.push("Must include the character '_'.");
         }
+
   
         if (conditions.length > 0) {
           this.error = `The password is not valid: ${conditions.join(" ")}`;
@@ -62,28 +61,45 @@ import Header from "@/components/Header.vue";
   };
   </script>
 
-  <style>
-.signup-page {
+<style scoped>
+.signup-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #fdfaf0;
+  padding: 20px 0;
+}
+
+.main-content {
+  text-align: center;
+  background-color: #fff6e6;
+  padding: 20px;
+  border: 3px solid #e0ad7e;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 60%;
+  margin: 40px 0; /* margin up and down */
+}
+
+.signup-form {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  gap: 10px;
 }
 
-.content {
-  flex: 1;
-  display: flex;
-  align-items: center; 
-  justify-content: center; 
-  padding: 2em;
-}
-
-form {
-  width: 100%;
-  background: white;
-  padding: 2em;
+.form-group input {
+  padding: 10px;
   border: 1px solid #ddd;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  font-size: 14px;
+  width: 80%;
+  max-width: 400px;
+}
+
+.error-message {
+  color: #d9534f;
+  font-size: 14px;
+  margin-top: 10px;
 }
 </style>
-  

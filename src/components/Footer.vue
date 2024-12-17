@@ -1,22 +1,22 @@
 <template>
-    <footer>
-      <p>© 2024 - My Vue App</p>
-    </footer>
-  </template>
-  
-  <script>
-  export default {
-    name: "Footer",
-  };
-  </script>
-  
-  <style scoped>
+  <footer>
+    <p>&copy; 2024 - My Vue App</p>
+  </footer>
+</template>
+
+<script>
+export default {
+  name: "Footer",
+};
+</script>
+
+<style scoped>
 footer {
-  background: #2c3e50;
-  color: white;
+  background-color: #d4e1e1;
   text-align: center;
-  padding: 1em 0;
-  font-size: 0.9em;
+  padding: 10px 0;
+  font-size: 18px;
+  color: #333;
+  margin-bottom: auto;
 }
-  </style>
-  
+</style>

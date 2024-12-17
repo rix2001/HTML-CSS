@@ -1,20 +1,29 @@
 <template>
-    <div>
-      <h3>{{ post.title }}</h3>
-      <p>{{ post.content }}</p>
-      <button @click="likePost">Like 👍 ({{ post.likes }})</button>
-    </div>
-  </template>
-  
-  <script>
-  export default {
-    name: "Post",
-    props: ["post"],
-    methods: {
-      likePost() {
-        this.$store.commit("incrementLikes", this.post.id);
-      },
+  <div class="post-item">
+    <h3>{{ title }}</h3>
+    <p class="post-date">{{ formattedDate }}</p>
+    <p>{{ body }}</p>
+  </div>
+</template>
+
+<script>
+export default {
+  name: "Post",
+  props: {
+    title: String,
+    body: String,
+    created_at: String,
+  },
+  computed: {
+    formattedDate() {
+      return new Date(this.created_at).toLocaleDateString("en-GB", {
+        day: "2-digit",
+        month: "short",
+        year: "numeric",
+      });
     },
-  };
-  </script>
-  
+  },
+};
+</script>
+
+

@@ -1,31 +1,100 @@
+
 body {
-    margin: 0;
-    font-family: 'Roboto', Arial, sans-serif;
-    line-height: 1.6;
-    background: #f8f9fa;
-    color: #212529;
-  }
-  
-  button {
-    background: #b94287;
-    color: white;
-    border: none;
-    padding: 0.5em 1em;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1em;
-    transition: 0.3s ease;
-  }
-  
-  button:hover {
-    background: #8d3657;
-  }
-  
-  a {
-    text-decoration: none;
-    color: #b9426c;
-  }
-  
-  a:hover {
-    text-decoration: underline;
-  }
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: #fdfaf0;
+  color: #333;
+  box-sizing: border-box;
+}
+
+
+.main-content {
+  width: 100%;
+  margin: 0;
+  padding: 20px 0; 
+  background-color: #fdfaf0;
+  border-radius: 0; 
+  min-height: 100vh; 
+  box-sizing: border-box;
+}
+
+/* Titles */
+.page-title {
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #4a4a4a;
+}
+
+/* Buttons */
+.button {
+  padding: 10px 20px;
+  background-color: #ffb84d;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s;
+}
+
+.button:hover {
+  background-color: #e09d3f;
+}
+
+.posts-container, .post-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 20px;
+  border-radius: 8px;
+  margin: 20px auto; 
+  max-width: 60%;
+}
+
+.post {
+  background-color: #fff6e6;
+  border: 3px solid #e0ad7e;
+  padding: 10%;
+  border-radius: 1cm;
+}
+
+.post-title {
+  font-weight: bold;
+  font-size: 20px;
+  color: #4d4d4d;
+}
+
+.post-content {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #555;
+}
+
+.post-date {
+  font-size: 12px;
+  text-align: right;
+  color: #888;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.contact-list {
+  text-align: center;
+  list-style: none;
+  padding: 0;
+}
+
+.contact-list li {
+  text-align: center;
+  padding: 10px;
+
+}
