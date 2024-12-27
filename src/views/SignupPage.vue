@@ -15,51 +15,59 @@
     </main>
   </div>
 </template>
-  
-  <script>
-  import Footer from "@/components/Footer.vue";
-  import Header from "@/components/Header.vue";
 
-  export default {
-    name: "SignupPage",
-    components: { Header, Footer},
-    data() {
-      return {
-        username: "",
-        password: "",
-        error: "",
-      };
-    },
-    methods: {
-      validatePassword() {
-        const conditions = [];
-        if (this.password.length < 8 || this.password.length > 15) {
-          conditions.push("Password must be between 8 and 15 characters.");
-        }
-        if (!/[A-Z]/.test(this.password)) {
-          conditions.push("Must include at least one uppercase letter.");
-        }
-        if (!/[a-z].*[a-z]/.test(this.password)) {
-          conditions.push("Must include at least two lowercase letters.");
-        }
-        if (!/\d/.test(this.password)) {
-          conditions.push("Must include at least one numeric value.");
-        }
-        if (!/_/.test(this.password)) {
-          conditions.push("Must include the character '_'.");
-        }
+<script>
+import axios from "axios";
 
-  
-        if (conditions.length > 0) {
-          this.error = `The password is not valid: ${conditions.join(" ")}`;
-        } else {
-          this.error = "";
-          alert("Signup successful!");
+export default {
+  name: "SignupPage",
+  data() {
+    return {
+      username: "",
+      password: "",
+      error: "",
+    };
+  },
+  methods: {
+    async validatePassword() {
+      const conditions = [];
+      if (this.password.length < 8 || this.password.length > 15) {
+        conditions.push("Password must be between 8 and 15 characters.");
+      }
+      if (!/[A-Z]/.test(this.password)) {
+        conditions.push("Must include at least one uppercase letter.");
+      }
+      if (!/[a-z].*[a-z]/.test(this.password)) {
+        conditions.push("Must include at least two lowercase letters.");
+      }
+      if (!/\d/.test(this.password)) {
+        conditions.push("Must include at least one numeric value.");
+      }
+      if (!/_/.test(this.password)) {
+        conditions.push("Must include the character '_'.");
+      }
+
+      if (conditions.length > 0) {
+        this.error = `The password is not valid: ${conditions.join(" ")}`;
+      } else {
+        this.error = "";
+        // Andmete saatmine serverile
+        try {
+          const response = await axios.post("http://localhost:5000/api/auth/signup", {
+            email: this.username,
+            password: this.password,
+          });
+          alert(response.data.message); // Kuvatakse serveri vastus
+          this.$router.push("/login"); // Liigub login lehele
+        } catch (err) {
+          this.error = err.response?.data?.error || "Signup failed. Try again.";
+          console.error(err);
         }
-      },
+      }
     },
-  };
-  </script>
+  },
+};
+</script>
 
 <style scoped>
 .signup-container {
